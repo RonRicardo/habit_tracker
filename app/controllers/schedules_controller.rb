@@ -3,8 +3,10 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
-    @users = User.all
+    @user = current_user
     @habits = Habit.all
+    @habit = Habit.create
+
   end
 
   def create
@@ -20,13 +22,13 @@ class SchedulesController < ApplicationController
   def show
     @schedule = Schedule.find(params[:id])
     user_num = @schedule.user_id
-    @user = User.find(user_num)
+    @user = current_user
     @user_schedules = @user.schedules.to_ary
   end
 
   def edit
       @schedule = Schedule.find(params[:id])
-      @users = User.all
+      @user = current_user
       @habits = Habit.all
       render :edit
     end
@@ -42,7 +44,7 @@ class SchedulesController < ApplicationController
 
   def destroy
     @schedule = Schedule.find(params[:id])
-    user = @schedule.user_id
+    user = current_user
     @schedule.destroy
     redirect_to user_path(user)
   end
