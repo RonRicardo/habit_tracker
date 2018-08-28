@@ -1,4 +1,7 @@
 
 <h1 style="text-align: center">Welcome to Habit Trackr</h1>
-
-<h2 style="text-align: center"><%= link_to "Sign Up or Log In", new_user_registration_path%></h2>
+<% if current_user %>
+  <h2 style="text-align: center">Welcome back, <%= current_user.name %>!</h2>
+<% else %>
+  <h2 style="text-align: center"><%= link_to "Sign Up or Log In", new_user_registration_path%></h2>
+<% end %>
