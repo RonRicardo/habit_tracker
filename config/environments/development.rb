@@ -38,6 +38,9 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  # Ensure you have defined default url options in your environments files.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
