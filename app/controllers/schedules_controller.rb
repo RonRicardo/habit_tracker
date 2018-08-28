@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :authorized
+  before_action :authenticate_user!
 
   def new
     @schedule = Schedule.new

@@ -1,9 +1,9 @@
 <%= form_for @habit do |f| %>
   <%= f.label "Name" %>
   <%= f.text_field :name %>
-  <%= f.label "Description"%>
-  <%= f.text_field :description %>
-  <%= f.submit "Edit Habit" %>
-
-
+  <br />
+  <%= f.label "Description" %>
+  <%= f.text_area :description %>
+  <br />
+  <%= f.submit "Create New Habit" %>
 <% end %>

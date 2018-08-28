@@ -1,5 +1,5 @@
 class HabitsController < ApplicationController
-  before_action :authorized
+  before_action :authenticate_user!
 
   def index
     @habits = Habit.all
