@@ -1,3 +1,4 @@
+<h2>Edit Schedule</h2>
 <%= form_for @schedule do |f| %>
   <%= f.label "Select a Habit" %>
   <%= f.collection_select :habit_id, @habits, :id, :name  %>
