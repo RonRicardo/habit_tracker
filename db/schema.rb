@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 2018_08_28_033126) do
 
   create_table "schedules", force: :cascade do |t|
     t.float "time"
-    t.integer "user_id"
-    t.integer "habit_id"
+    t.bigint "user_id"
+    t.bigint "habit_id"
     t.string "frequency"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_schedules_on_habit_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -2,15 +2,19 @@ class SchedulesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @schedule = Schedule.new
-    @user = current_user
-    @habits = Habit.all
-    @habit = Habit.create
-
+    if Habit.all.length === 0
+      flash[:alert] = "You have to add a habit first!"
+      redirect_to new_habit_path
+    else
+      @habits = Habit.all
+      @schedule = Schedule.new
+      user_id = current_user.id
+    end
   end
 
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.user_id = current_user.id if current_user
     if @schedule.valid?
       @schedule.save
       redirect_to schedule_path(@schedule)
@@ -21,9 +25,7 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
-    user_num = @schedule.user_id
     @user = current_user
-    @user_schedules = @user.schedules.to_ary
   end
 
   def edit
@@ -46,7 +48,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     user = current_user
     @schedule.destroy
-    redirect_to user_path(user)
+    redirect_to root
   end
 
 

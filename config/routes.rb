@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   resources :schedules #, only: [:show, :new, :create, :update, :edit, :destroy]
   resources :habits, only: [:show, :new, :create, :edit, :update] #we're using all of them right now but this can be refactored
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
 
 end

@@ -2,9 +2,6 @@
   <%= f.label "Select a Habit" %>
   <%= f.collection_select :habit_id, @habits, :id, :name  %>
   <br>
-  <%= f.label "Select a User" %>
-  <%= f.collection_select :user_id, @users, :id, :name  %>
-  <br>
   <%= f.label :time %>
   <%= f.number_field (:time) %>
   <br>

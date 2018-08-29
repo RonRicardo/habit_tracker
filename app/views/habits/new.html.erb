@@ -1,11 +1,13 @@
-<% content_for :title, "Title for specific page" %>
+<% content_for :title, "Create a New Habit" %>
 
-<%= form_for @habit do |f| %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label "Description" %>
-  <%= f.text_area :description %>
-  <br />
-  <%= f.submit "Create New Habit" %>
-<% end %>
+<%= flash[:alert] %>
+  <br>
+  <%= form_for @habit do |f| %>
+    <%= f.label "Name" %>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label "Description" %>
+    <%= f.text_area :description %>
+    <br />
+    <%= f.submit "Create New Habit" %>
+  <% end %>

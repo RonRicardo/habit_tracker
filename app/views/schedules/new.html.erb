@@ -1,34 +1,21 @@
 <%= form_for @schedule do |f| %>
-  <%= f.label "Select or Create a Habit" %>
-    <% if @habits %>
-    <%= f.collection_select :habit_id, @habits, :id, :name  %>
+  <%= f.label "Select a Habit" %>
+  <%= f.collection_select(:habit_id, Habit.all, :id, :name)%>
     <br>
-    <% end %>
-    <%= f.fields_for :habit do |habit_form| %>
-    <h5>New Habit:</h5>
-          <li>
-            <%= habit_form.label :name %>
-            <%= habit_form.text_field :name %>
-          </li>
-          <li>
-            <%= habit_form.label :description %>
-            <%= habit_form.text_field :description %>
-          </li>
-    <% end %>
-<div>
-  <h5>Schedule your habit!</h5>
-    <%= f.label :time %>
-    <%= f.time_field (:time) %>
-    <br>
-    <%= f.label :frequency %>
-    <%= f.text_field (:frequency) %>
-    <br>
-    <%= f.label :start_date %>
-    <%= date_field(:schedule, :start_date) %>
-    <br>
-    <%= f.label :end_date %>
-    <%= date_field(:schedule, :end_date) %>
-    <br>
-    <%= f.submit %>
-  <% end %>
+  <div>
+    <h5>Schedule your habit!</h5>
+      <%= f.label :time %>
+      <%= f.time_field (:time) %>
+      <br>
+      <%= f.label :frequency %>
+      <%= f.text_field (:frequency) %>
+      <br>
+      <%= f.label :start_date %>
+      <%= date_field(:schedule, :start_date) %>
+      <br>
+      <%= f.label :end_date %>
+      <%= date_field(:schedule, :end_date) %>
+      <br>
+      <%= f.submit %>
+      <% end %>
 </div>
