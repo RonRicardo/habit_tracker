@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # post   '/login',   to: 'sessions#create'
   # delete '/logout',  to: 'sessions#destroy'
 
-  resources :schedules #, only: [:show, :new, :create, :update, :edit, :destroy]
+  resources :schedules
   resources :habits, only: [:show, :new, :create, :edit, :update] #we're using all of them right now but this can be refactored
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
