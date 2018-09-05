@@ -48,7 +48,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     user = current_user
     @schedule.destroy
-    redirect_to root
+    render :index
   end
 
 

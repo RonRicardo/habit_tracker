@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Schedule.destroy_all
+# Schedule.destroy_all
 Habit.destroy_all
 User.destroy_all
 
@@ -25,11 +25,11 @@ user5 = User.create(name: "Soraya")
 user6 = User.create(name: "Aliya")
 user7 = User.create(name: "Sarah")
 
-Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
-Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
-Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: 1.0, user_id: user1.id, habit_id: habit2.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
 
 
-Schedule.create(time: "Call mom or dad", user_id: user3.id, habit_id: habit3.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
-Schedule.create(time: "Tidy the house", user_id: user4.id, habit_id: habit4.id, frequency: "Weekly", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
-Schedule.create(time: "Sleep before 11 pm", user_id: user5.id, habit_id: habit5.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: "Call mom or dad", user_id: user3.id, habit_id: habit3.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: "Tidy the house", user_id: user4.id, habit_id: habit4.id, frequency: "Weekly", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
+# Schedule.create(time: "Sleep before 11 pm", user_id: user5.id, habit_id: habit5.id, frequency: "Daily", start_date: Faker::Date.backward(30), end_date: Faker::Date.forward(30))
