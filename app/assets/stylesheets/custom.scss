@@ -2,26 +2,3 @@
 @import "bootstrap";
 
 /* universal */
-
-body {
-  padding-top: 60px;
-  text-align: center;
-  align-content: center;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  align-content: center;
-}
-
-.center h1, h2 {
-  margin-bottom: 10px;
-}
